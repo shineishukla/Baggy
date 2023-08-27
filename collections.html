@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .container {
+            max-width: 1200px;
+            width: 90%;
+            margin: 0 auto;
+        }
+        
+        body {
+            font-family: "Poppins", sans-serif;
+        }
         :root {
             /* //....... Color ........// */
             --primary-color: #ff3c78;
@@ -298,8 +307,7 @@
             color: var(--grey);
         }
 
-
-        @media(min-width: 501px) and (max-width: 768px) {
+        @media (max-width:500px){
             .footer-container {
                 display: flex;
                 flex-direction: column;
@@ -308,7 +316,7 @@
                 margin-bottom: 30px;
             }
         }
-        @media (max-width:500px){
+        @media(min-width: 501px) and (max-width: 768px) {
             .footer-container {
                 display: flex;
                 flex-direction: column;
