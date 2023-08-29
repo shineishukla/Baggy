@@ -19,7 +19,9 @@
           </div>
           <div class="sign_in_up ">
               <a href="./user.html"><i class='bx bx-user bx-sm' ></i></a>
-              <a href="#"><i class='bx bx-shopping-bag bx-sm'></i></a>
+              <a href="#" class="cart-icon"><i class='bx bx-shopping-bag bx-sm'></i></a>
+              <span id="cart-count" class="cart-count">0</span>
+
               
           </div>
       </div>
@@ -87,7 +89,7 @@
 <!--best sales of the year-->
   <section id="sellers">
       <div class="seller container">
-          <h2>Best Sellers</h2>
+          <h2>Hot Deals</h2>
           <div class="best-seller">
               <div class="best-p1">
                   <img src="./assets/1.jpg" alt="img">
@@ -111,11 +113,11 @@
                           </div>
                       </div>
                       <div class="buy-now">
-                          <button><a href="#">Buy  Now</a></button>
+                          <button><a href="">Buy Now</a></button>
                       </div>
-                      <!-- <div class="add-cart">
-                          <button>Add To Cart</button>
-                      </div> -->
+                      <div class="add-cart">
+                          <button class="add-to-cart-btn" onclick="addToCart('Pearl Beaded Bag', 1, 37.24)">Add To Cart</button>
+                      </div>
                   </div>
               </div>
               <div class="best-p1">
@@ -142,10 +144,13 @@
                       <div class="buy-now">
                           <button><a href="#">Buy  Now</a></button>
                       </div>
+                      <div class="add-cart">
+                        <button class="add-to-cart-btn" onclick="addToCart('Mini Black Sling Bag', 1, 17.24)">Add To Cart</button>
+                    </div>
                   </div>
               </div>
               <div class="best-p1">
-                  <img src="./assets/9.jpg" alt="img">
+                  <img src="./assets/3.jpg" alt="img">
                   <div class="best-p1-txt">
                       <div class="name-of-p">
                           <p>Men Work Bag</p>
@@ -168,6 +173,9 @@
                       <div class="buy-now">
                           <button><a href="#">Buy  Now</a></button>
                       </div>
+                      <div class="add-cart">
+                        <button class="add-to-cart-btn" onclick="addToCart('Men Work Bag', 1, 27.24)">Add To Cart</button>
+                    </div>
                   </div>
               </div>
               <div class="best-p1">
@@ -194,231 +202,136 @@
                       <div class="buy-now">
                           <button><a href="#">Buy  Now</a></button>
                       </div>
+                      <div class="add-cart">
+                        <button class="add-to-cart-btn" onclick="addToCart('Geometric Cut-out Clutch', 1, 43.67)">Add To Cart</button>
+                    </div>
                   </div>
               </div>
           </div>
       </div>
-      <!--new arrivals of the month-->
       <div class="seller container">
-          <h2>New Arrivals</h2>
-          <div class="best-seller">
-              <div class="best-p1">
-                  <img src="./assets/6.jpg" alt="img">
-                  <div class="best-p1-txt">
-                      <div class="name-of-p">
-                          <p>Embellished Potli</p>
-                      </div>
-                      <div class="rating">
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                      </div>
-                      <div class="price">
-                          &dollar;10.23
-                          <div class="colors">
-                              <i class='bx bxs-circle blank'></i>
-                              <i class='bx bxs-circle blue'></i>
-                              <i class='bx bxs-circle brown'></i>
-                          </div>
-                      </div>
-                      <div class="buy-now">
-                          <button><a href="#">Buy  Now</a></button>
-                      </div>
+        <h2>Best Sellers</h2>
+        <div class="best-seller">
+            <div class="best-p1">
+                <img src="./assets/5.jpg" alt="img">
+                <div class="best-p1-txt">
+                    <div class="name-of-p">
+                        <p>Blue Mini Bag</p>
+                    </div>
+                    <div class="rating">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                    </div>
+                    <div class="price">
+                        &dollar;37.24
+                        <div class="colors">
+                            <i class='bx bxs-circle red'></i>
+                            <i class='bx bxs-circle blue'></i>
+                            <i class='bx bxs-circle white'></i>
+                        </div>
+                    </div>
+                    <div class="buy-now">
+                        <button><a href="">Buy Now</a></button>
+                    </div>
+                    <div class="add-cart">
+                        <button class="add-to-cart-btn" onclick="addToCart('Blue Mini Bag', 1, 37.24)">Add To Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="best-p1">
+                <img src="./assets/6.jpg" alt="img">
+                <div class="best-p1-txt">
+                    <div class="name-of-p">
+                        <p>Potli</p>
+                    </div>
+                    <div class="rating">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                        <i class='bx bx-star'></i>
+                    </div>
+                    <div class="price">
+                        &dollar;17.24
+                        <div class="colors">
+                            <i class='bx bxs-circle green'></i>
+                            <i class='bx bxs-circle grey'></i>
+                            <i class='bx bxs-circle brown'></i>
+                        </div>
+                    </div>
+                    <div class="buy-now">
+                        <button><a href="#">Buy  Now</a></button>
+                    </div>
+                    <div class="add-cart">
+                      <button class="add-to-cart-btn" onclick="addToCart('Potli', 1, 17.24)">Add To Cart</button>
                   </div>
-              </div>
-              <div class="best-p1">
-                  <img src="./assets/7.jpg" alt="img">
-                  <div class="best-p1-txt">
-                      <div class="name-of-p">
-                          <p>Mini Handbag</p>
-                      </div>
-                      <div class="rating">
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bx-star'></i>
-                          <i class='bx bx-star'></i>
-                          <i class='bx bx-star'></i>
-                          <i class='bx bx-star'></i>
-                      </div>
-                      <div class="price">
-                          &dollar;09.28
-                          <div class="colors">
-                              <i class='bx bxs-circle brown'></i>
-                              <i class='bx bxs-circle red'></i>
-                              <i class='bx bxs-circle green'></i>
-                          </div>
-                      </div>
-                      <div class="buy-now">
-                          <button><a href="#">Buy  Now</a></button>
-                      </div>
+                </div>
+            </div>
+            <div class="best-p1">
+                <img src="./assets/7.jpg" alt="img">
+                <div class="best-p1-txt">
+                    <div class="name-of-p">
+                        <p>Black Handbag</p>
+                    </div>
+                    <div class="rating">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bx-star'></i>
+                    </div>
+                    <div class="price">
+                        &dollar;27.24
+                        <div class="colors">
+                            <i class='bx bxs-circle brown'></i>
+                            <i class='bx bxs-circle green'></i>
+                            <i class='bx bxs-circle blue'></i>
+                        </div>
+                    </div>
+                    <div class="buy-now">
+                        <button><a href="#">Buy  Now</a></button>
+                    </div>
+                    <div class="add-cart">
+                      <button class="add-to-cart-btn" onclick="addToCart('Black Handbag', 1, 27.24)">Add To Cart</button>
                   </div>
-              </div>
-              <div class="best-p1">
-                  <img src="./assets/8.jpeg" alt="img">
-                  <div class="best-p1-txt">
-                      <div class="name-of-p">
-                          <p>CrossBody Men Bag</p>
-                      </div>
-                      <div class="rating">
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                      </div>
-                      <div class="price">
-                          &dollar;06.24
-                          <div class="colors">
-                              <i class='bx bxs-circle grey'></i>
-                              <i class='bx bxs-circle blank'></i>
-                              <i class='bx bxs-circle blank'></i>
-                          </div>
-                      </div>
-                      <div class="buy-now">
-                          <button><a href="#">Buy  Now</a></button>
-                      </div>
+                </div>
+            </div>
+            <div class="best-p1">
+                <img src="./assets/8.jpg" alt="img">
+                <div class="best-p1-txt">
+                    <div class="name-of-p">
+                        <p>Messenger Bag</p>
+                    </div>
+                    <div class="rating">
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                        <i class='bx bxs-star'></i>
+                    </div>
+                    <div class="price">
+                        &dollar;43.67
+                        <div class="colors">
+                            <i class='bx bxs-circle red'></i>
+                            <i class='bx bxs-circle grey'></i>
+                            <i class='bx bxs-circle blue'></i>
+                        </div>
+                    </div>
+                    <div class="buy-now">
+                        <button><a href="#">Buy  Now</a></button>
+                    </div>
+                    <div class="add-cart">
+                      <button class="add-to-cart-btn" onclick="addToCart('Messenger Bag', 1, 43.67)">Add To Cart</button>
                   </div>
-              </div>
-              <div class="best-p1">
-                  <img src="./assets/10.jpg" alt="img">
-                  <div class="best-p1-txt">
-                      <div class="name-of-p">
-                          <p>Men's Messesnger Bag</p>
-                      </div>
-                      <div class="rating">
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                      </div>
-                      <div class="price">
-                          &dollar;43.67
-                          <div class="colors">
-                              <i class='bx bxs-circle grey'></i>
-                              <i class='bx bxs-circle red'></i>
-                              <i class='bx bxs-circle blue'></i>
-                          </div>
-                      </div>
-                      <div class="buy-now">
-                          <button><a href="#">Buy  Now</a></button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <!--deals section-->
-      <div class="seller container">
-          <h2>Hot Deals</h2>
-          <div class="best-seller">
-              <div class="best-p1">
-                  <img src="./assets/11.jpg" alt="img">
-                  <div class="best-p1-txt">
-                      <div class="name-of-p">
-                          <p>3 Textured Bag Set</p>
-                      </div>
-                      <div class="rating">
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                      </div>
-                      <div class="price">
-                          &dollar;67.24
-                          <div class="colors">
-                              <i class='bx bxs-circle grey'></i>
-                              <i class='bx bxs-circle black'></i>
-                              <i class='bx bxs-circle blue'></i>
-                          </div>
-                      </div>
-                      <div class="buy-now">
-                          <button><a href="">Buy  Now</a></button>
-                      </div>
-                  </div>
-              </div>
-              <div class="best-p1">
-                  <img src="./assets/12.jpg" alt="img">
-                  <div class="best-p1-txt">
-                      <div class="name-of-p">
-                          <p>Active Gym Bag</p>
-                      </div>
-                      <div class="rating">
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                      </div>
-                      <div class="price">
-                          &dollar;50.23
-                          <div class="colors">
-                              <i class='bx bxs-circle blank'></i>
-                              <i class='bx bxs-circle blue'></i>
-                              <i class='bx bxs-circle brown'></i>
-                          </div>
-                      </div>
-                      <div class="buy-now">
-                          <button><a href="">Buy  Now</a></button>
-                      </div>
-                  </div>
-              </div>
-              <div class="best-p1">
-                  <img src="./assets/13.jpg" alt="img">
-                  <div class="best-p1-txt">
-                      <div class="name-of-p">
-                          <p>Waist Bag</p>
-                      </div>
-                      <div class="rating">
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bxs-star'></i>
-                      </div>
-                      <div class="price">
-                          &dollar;15.24
-                          <div class="colors">
-                              <i class='bx bxs-circle blank'></i>
-                              <i class='bx bxs-circle red'></i>
-                              <i class='bx bxs-circle blue'></i>
-                          </div>
-                      </div>
-                      <div class="buy-now">
-                          <button><a href="#">Buy  Now</a></button>
-                      </div>
-                  </div>
-              </div>
-              <div class="best-p1">
-                  <img src="./assets/14.jpg" alt="img">
-                  <div class="best-p1-txt">
-                      <div class="name-of-p">
-                          <p>Graphic Print Backpack</p>
-                      </div>
-                      <div class="rating">
-                          <i class='bx bxs-star'></i>
-                          <i class='bx bx-star'></i>
-                          <i class='bx bx-star'></i>
-                          <i class='bx bx-star'></i>
-                          <i class='bx bx-star'></i>
-                      </div>
-                      <div class="price">
-                          &dollar;09.28
-                          <div class="colors">
-                              <i class='bx bxs-circle blank'></i>
-                              <i class='bx bxs-circle grey'></i>
-                              <i class='bx bxs-circle brown'></i>
-                          </div>
-                      </div>
-                      <div class="buy-now">
-                          <button><a href="">Buy  Now</a></button>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+                </div>
+            </div>
+        </div>
+    </div><br>
   </section>
+  <br/>
   <!--contact section-->
   <section id="contact">
       <div class="contact container">

@@ -22,6 +22,29 @@ $(".menu-items a").click(function () {
 });
 
 
+// Function to add a product to the cart
+function addToCart(productName, quantity, price) {
+  const product = {
+      name: productName,
+      qty: quantity,
+      price: price
+  };
+
+  cart.push(product);
+  updateCartDisplay();
+  updateCartCount(); // Call the function to update cart count
+}
+
+// Function to update the cart count
+function updateCartCount() {
+  const cartCountElement = document.getElementById('cart-count');
+  cartCountElement.textContent = cart.length;
+}
+
+// Call the updateCartDisplay and updateCartCount functions to initialize the cart display and count
+updateCartDisplay();
+updateCartCount();
+
 
 
 

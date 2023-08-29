@@ -48,7 +48,14 @@ body {
     margin: 0 10px;
 }
 
-
+/*cart*/
+.cart-count {
+    background-color: rgb(5, 5, 5);
+    color: white;
+    border-radius: 50%;
+    padding: 2px 4px;
+    font-size: 14px;
+}
 
 .navbar input[type="checkbox"],
 .navbar .hamburger-lines {
@@ -594,24 +601,24 @@ body {
 }
 
 .seller h2 {
-    margin-top: 65px;
-    margin-bottom: 20px;
+    margin-top: 55px;
+    margin-bottom: 10px;
 }
 
 .seller .best-p1 {
-    width: 250px;
-    height: 370px;
-    /* border: 2px solid black; */
+    width: 200px;
+    height: 320px;
 }
 
 .seller .best-p1 img {
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
 }
 
 .seller .best-p1 .price {
     display: flex;
     justify-content: space-between;
+    
 }
 
 .seller .best-p1 .price .colors input[type="radio"] {
@@ -646,22 +653,21 @@ body {
 
 .best-seller .buy-now button:hover,
 .best-seller .add-cart button:hover {
-    background-color: var(--white);
     font-weight: 600;
 }
 
 .best-seller .buy-now button:hover a,
 .best-seller .add-cart button:hover a {
-    color: #f05e8a;
+    color: #fcf9fa;
 }
 
 
-/* .best-seller .add-cart button {
+.best-seller .add-cart button {
     padding: 5px 5px;
     margin-top: 5px;
     font-size: 14px;
     cursor: pointer;
-} */
+} 
 
 
 /* //........ deal of week ........// */
