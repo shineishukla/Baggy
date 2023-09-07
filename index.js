@@ -22,13 +22,6 @@ $(".menu-items a").click(function () {
 });
 
 
-// JavaScript to handle the "Buy Now" button click
-const buyNowButton = document.querySelector('.buy-now-button');
-
-buyNowButton.addEventListener('click', () => {
-    // Redirect to the checkout page when the button is clicked
-    window.location.href = 'checkout.html';
-});
 
 
 
