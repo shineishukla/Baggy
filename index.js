@@ -25,35 +25,34 @@ $(".menu-items a").click(function () {
 
 
 
-  $(document).ready(function() {
-    // Initialize cart count
-    let cartCount = 0;
+$(document).ready(function() {
+  // Initialize cart count
+  let cartCount = 0;
 
-    // Function to update the cart count displayed in the HTML
-    function updateCartCount() {
+  // Function to update the cart count displayed in the HTML
+  function updateCartCount() {
       $('#cart-count').text(cartCount);
-    }
+  }
 
-    // Function to handle the "Add to Cart" button click
-    $('.add-to-cart').click(function(event) {
-      event.preventDefault();
+  // Function to handle the "Add to Cart" button click
+  $('.add-to-cart').click(function(event) {
+    event.preventDefault();
 
-      // Increment the cart count
-      cartCount++;
+    // Increment the cart count
+    cartCount++;
 
-      // Update the cart count displayed in the HTML
-      updateCartCount();
+    // Update the cart count displayed in the HTML
+    updateCartCount();
 
-      // Get the product information from data attributes
-      const productName = $(this).data('product');
-      const productPrice = $(this).data('price');
+    // Get the product information from data attributes
+    const productName = $(this).data('product');
+    const productPrice = $(this).data('price');
 
-      // Here, you can add more complex logic to manage the cart.
-      // For now, we're just displaying an alert.
-      alert(`Added ${productName} to cart. Price: $${productPrice}`);
+    // Here, you can add more complex logic to manage the cart.
+    // For now, we're just displaying an alert.
+    alert(`Added ${productName} to cart. Price: $${productPrice}`);
   });
   });
-    
 
 
 
