@@ -51,16 +51,9 @@ $(".menu-items a").click(function () {
       // Here, you can add more complex logic to manage the cart.
       // For now, we're just displaying an alert.
       alert(`Added ${productName} to cart. Price: $${productPrice}`);
-    });
-
-    // Function to open the cart modal
-    $('#open-cart').click(function() {
-      $('#cart-modal').css('display', 'block');
-    });
-
-    // Function to close the cart modal when clicking the close button
-    $('.close').click(function() {
-      $('#cart-modal').css('display', 'none');
-    });
   });
+  });
+    
+
+
 
