@@ -22,43 +22,45 @@ $(".menu-items a").click(function () {
 });
 
 
-//add to cart function
 
-// Function to handle adding items to the cart
-function addToCart(productName, productPrice) {
-  // You can use localStorage, cookies, or a server to store cart information.
-  // For this example, we'll use localStorage.
-  
-  // Get the current cart count from localStorage
-  let cartCount = localStorage.getItem("cartCount") || 0;
-  
-  // Increment the cart count
-  cartCount = parseInt(cartCount) + 1;
-  
-  // Store the updated cart count in localStorage
-  localStorage.setItem("cartCount", cartCount);
-  
-  // Update the cart count displayed on the page
-  document.getElementById("cart-count").textContent = cartCount;
-  
-  // You can also store product information in the cart if needed.
-}
 
-// Get all "Add to Cart" buttons and add click event listeners
-const addToCartButtons = document.querySelectorAll(".add-to-cart");
-addToCartButtons.forEach(button => {
-  button.addEventListener("click", () => {
-      const productName = button.getAttribute("data-product");
-      const productPrice = button.getAttribute("data-price");
-      addToCart(productName, productPrice);
+
+  $(document).ready(function() {
+    // Initialize cart count
+    let cartCount = 0;
+
+    // Function to update the cart count displayed in the HTML
+    function updateCartCount() {
+      $('#cart-count').text(cartCount);
+    }
+
+    // Function to handle the "Add to Cart" button click
+    $('.add-to-cart').click(function(event) {
+      event.preventDefault();
+
+      // Increment the cart count
+      cartCount++;
+
+      // Update the cart count displayed in the HTML
+      updateCartCount();
+
+      // Get the product information from data attributes
+      const productName = $(this).data('product');
+      const productPrice = $(this).data('price');
+
+      // Here, you can add more complex logic to manage the cart.
+      // For now, we're just displaying an alert.
+      alert(`Added ${productName} to cart. Price: $${productPrice}`);
+    });
+
+    // Function to open the cart modal
+    $('#open-cart').click(function() {
+      $('#cart-modal').css('display', 'block');
+    });
+
+    // Function to close the cart modal when clicking the close button
+    $('.close').click(function() {
+      $('#cart-modal').css('display', 'none');
+    });
   });
-});
-
-// Initialize the cart count on page load
-document.getElementById("cart-count").textContent = localStorage.getItem("cartCount") || 0;
-
-
-
-
-
 
