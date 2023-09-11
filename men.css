@@ -297,6 +297,14 @@ body {
   background-color: #717171;
 }
 
+.cart-count {
+    background-color: rgb(5, 5, 5);
+    color: white;
+    border-radius: 60px;
+    padding: 2px 4px;
+    font-size: 14px;
+}
+
 /* Fading animation */
 .fade {
   animation-name: fade;

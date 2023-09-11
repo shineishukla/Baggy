@@ -52,7 +52,5 @@ $(document).ready(function() {
     // For now, we're just displaying an alert.
     alert(`Added ${productName} to cart. Price: $${productPrice}`);
   });
-  });
-
-
+});
 

@@ -36,6 +36,14 @@ body {
     font-size: 14px;
 }
 
+.cart-count {
+    background-color: rgb(5, 5, 5);
+    color: white;
+    border-radius: 60px;
+    padding: 2px 4px;
+    font-size: 14px;
+}
+
 @media (max-width: 500px) {
     .head {
         display: none;
