@@ -79,8 +79,127 @@
         </div>
 
         <!--filter-->
-        
-        
+        <section id="sellers">
+          <div id="sort-container">
+            <select id="sort-by">
+             <option value="sort-by">Sort By:</option>
+              <option value="recommended">Recommended</option>
+              <option value="price-low-to-high">Price: Low to High</option>
+              <option value="price-high-to-low">Price: High to Low</option>
+              <option value="popularity">Popularity</option>
+            </select>
+          </div><br/><br/>
+            <div class="seller container">
+                <div class="best-seller">
+                    <div class="best-p1">
+                        <img src="./assets/1.jpg" alt="img">
+                        <div class="best-p1-txt">
+                            <div class="name-of-p">
+                                <p>Pearl Beaded Bag</p>
+                            </div>
+                            <div class="rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bx-star'></i>
+                                <i class='bx bx-star'></i>
+                            </div>
+                            <div class="price">
+                                &dollar;37
+                                <div class="colors">
+                                    <i class='bx bxs-circle red'></i>
+                                    <i class='bx bxs-circle blue'></i>
+                                    <i class='bx bxs-circle white'></i>
+                                </div>
+                            </div>
+                            <div class="buy-now">
+                                <button class="add-to-cart" data-product="Product 1" data-price="37">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="best-p1">
+                        <img src="./assets/2.jpg" alt="img">
+                        <div class="best-p1-txt">
+                            <div class="name-of-p">
+                                <p>Mini Black Sling Bag</p>
+                            </div>
+                            <div class="rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bx-star'></i>
+                                <i class='bx bx-star'></i>
+                                <i class='bx bx-star'></i>
+                            </div>
+                            <div class="price">
+                                &dollar;17
+                                <div class="colors">
+                                    <i class='bx bxs-circle green'></i>
+                                    <i class='bx bxs-circle grey'></i>
+                                    <i class='bx bxs-circle brown'></i>
+                                </div>
+                            </div>
+                            <div class="buy-now">
+                                <button class="add-to-cart" data-product="Product 2" data-price="17">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="best-p1">
+                        <img src="./assets/3.jpg" alt="img">
+                        <div class="best-p1-txt">
+                            <div class="name-of-p">
+                                <p>Men Work Bag</p>
+                            </div>
+                            <div class="rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bx-star'></i>
+                            </div>
+                            <div class="price">
+                                &dollar;27
+                                <div class="colors">
+                                    <i class='bx bxs-circle brown'></i>
+                                    <i class='bx bxs-circle green'></i>
+                                    <i class='bx bxs-circle blue'></i>
+                                </div>
+                            </div>
+                            <div class="buy-now">
+                                <button class="add-to-cart" data-product="Product 3" data-price="27">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="best-p1">
+                        <img src="./assets/4.jpg" alt="img">
+                        <div class="best-p1-txt">
+                            <div class="name-of-p">
+                                <p>Cut-out Clutch</p>
+                            </div>
+                            <div class="rating">
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                                <i class='bx bxs-star'></i>
+                            </div>
+                            <div class="price">
+                                &dollar;43
+                                <div class="colors">
+                                    <i class='bx bxs-circle red'></i>
+                                    <i class='bx bxs-circle grey'></i>
+                                    <i class='bx bxs-circle blue'></i>
+                                </div>
+                            </div>
+                            <div class="buy-now">
+                                <button class="add-to-cart" data-product="Product 4" data-price="43">Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </section>
+        <br/>
+        <br/>
         
 
       
@@ -118,7 +237,10 @@
             </div>
         </footer>
         
-        <!--javascript code-->
+         <!--jquery-->
+         <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        
+         <!--javascript code-->
         <script>
         let slideIndex = 1;
         showSlides(slideIndex);
@@ -146,6 +268,26 @@
           slides[slideIndex-1].style.display = "block";  
           dots[slideIndex-1].className += " active";
         }
-        </script>
+
+        $(document).ready(function() {
+          let cartCount = 0;
+          function updateCartCount() {
+              $('#cart-count').text(cartCount);
+          }
+          $('.add-to-cart').click(function(event) {
+            event.preventDefault();
+
+            cartCount++;
+
+            updateCartCount();
+
+            const productName = $(this).data('product');
+            const productPrice = $(this).data('price');
+
+            alert(`Added ${productName} to cart. Price: $${productPrice}`);
+          });
+        });
+        </script>  
+
 </body>
 </html>
