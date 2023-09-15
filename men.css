@@ -626,6 +626,10 @@ footer {
     }
 }
 
+.link-active {
+    border-bottom: 2px solid #ff3c78;
+}
+
 
 
 
