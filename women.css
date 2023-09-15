@@ -173,6 +173,10 @@ label[for="sort-by"] {
     cursor: pointer;
 } 
 
+.link-active {
+    border-bottom: 2px solid #ff3c78;
+}
+
 @media (max-width: 500px) {
     .head {
         display: none;
