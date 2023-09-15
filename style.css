@@ -112,9 +112,14 @@ body {
     transition: 0.3s;
 }
 
+.link-active {
+    border-bottom: 2px solid #ff3c78;
+}
+
 .navbar-container ul a:hover:after {
     width: 100%;
 }
+
 
 @media (max-width: 768px) {
     .navbar {
