@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+</head>
+<body>
+    <div class="cart-container">
+        <div class="cart-content">
+            <h2>Your Cart</h2>
+            <ul id="cart-items">
+                <!-- Cart items will be displayed here dynamically -->
+            </ul>
+            <button id="closeCartButton" class="close-cart-button">Close Cart</button>
+        </div>
+    </div>
+    
+    <script>
+        // JavaScript (cart.js)
+    document.addEventListener("DOMContentLoaded", function() {
+        const addToCartButtons = document.querySelectorAll(".add-to-cart-button");
+        const cartButton = document.getElementById("cartButton");
+        const closeCartButton = document.getElementById("closeCartButton");
+        const cartContainer = document.querySelector(".cart-container");
+        const cartItemsList = document.getElementById("cart-items");
+    
+        // Initialize cart from localStorage
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    
+        // Function to save the cart to localStorage
+        function saveCart() {
+            localStorage.setItem("cart", JSON.stringify(cart));
+        }
+    
+        // Function to add a product to the cart
+        function addToCart(product, price) {
+            // Add the product to the cart array
+            cart.push({ product, price });
+    
+            // Update the cart items displayed in the cart container
+            updateCartDisplay();
+            saveCart(); // Save the updated cart to localStorage
+        }
+    
+        // Function to update the cart display
+        function updateCartDisplay() {
+            // Clear the current cart items
+            cartItemsList.innerHTML = "";
+    
+            // Iterate through cart items and display them
+            cart.forEach(function(item) {
+                const listItem = document.createElement("li");
+                listItem.textContent = `${item.product} - $${item.price.toFixed(2)}`;
+                cartItemsList.appendChild(listItem);
+            });
+    
+            // Show the cart container
+            cartContainer.style.display = "block";
+        }
+    
+        // Function to close the cart container and return to the main page
+        closeCartButton.addEventListener("click", function() {
+            cartContainer.style.display = "none";
+            // Redirect to the main page (index.html in this example)
+            window.location.href = "./index.html";
+        });
+    
+        // Function to open the cart container when the "Cart" button is clicked
+        cartButton.addEventListener("click", function() {
+            updateCartDisplay();
+            cartContainer.style.display = "block";
+        });
+    
+        // Attach click event listeners to all "Add to Cart" buttons on product pages
+        addToCartButtons.forEach(function(button) {
+            button.addEventListener("click", function() {
+                const product = button.getAttribute("data-product");
+                const price = parseFloat(button.getAttribute("data-price"));
+                addToCart(product, price);
+            });
+        });
+    
+        // Initialize cart display
+        updateCartDisplay();
+    });
+    
+    </script>
+    
+</body>
+</html>
