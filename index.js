@@ -39,7 +39,7 @@ $(document).ready(function() {
     const productName = $(this).data('product');
     const productPrice = $(this).data('price');
 
-    alert(`Added ${productName} to cart. Price: $${productPrice}`);
+    (`Added ${productName} to cart. Price: $${productPrice}`);
   });
   
   $(".cart-icon").click(function() {
